@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Tâches</title>
+    <!-- Inclure Bootstrap si nécessaire -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgba(0, 115, 255, 0.511);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Votre Application de Gestion de Tâches</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('index') }}">Accueil <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('taches') }}">Liste des Tâches</a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Liste des Tâches</h1>
+        <a class="btn btn-primary " href="{{ url_for('ajouter_tache') }}" role="button">Ajouter une Tâche</a>
+<br><br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tache in taches %}
+                <tr>
+                    <th scope="row">{{ tache.id }}</th>
+                    <td>{{ tache.titre }}</td>
+                    <td>{{ tache.description }}</td>
+                    <td>{{ tache.date }}</td>
+                    <td>
+                        <a href="{{ url_for('modifier_tache', id=tache.id) }}" class="btn btn-primary btn-sm">Modifier</a>
+                        <form action="{{ url_for('supprimer_tache', id=tache.id) }}" method="post" style="display: inline;">
+                            <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

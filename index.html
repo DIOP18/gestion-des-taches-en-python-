@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue</title>
+    <!-- Inclure Bootstrap si nécessaire -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: rgba(0, 115, 255, 0.511);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Gestion de Tâches</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url_for('index') }}">Accueil <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('taches') }}">Liste des Tâches</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+ 
+    <div class="container mt-4">
+        <div class="jumbotron">
+            <h1 class="display-0">BONSOIR
+                BIENVENUE AU GROUPE ISI DE KEUR MASSAR 
+            </h1>
+            <p class="lead">Bienvenue sur  application de gestion des tâches. 
+                Utilisez le menu de navigation pour accéder aux fonctionnalités.</p>
+            <hr class="my-0">
+            <p>Vous pouvez commencer en ajoutant des tâches ou en consultant la liste des tâches existantes.</p>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

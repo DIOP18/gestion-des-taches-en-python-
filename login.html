@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+    <style>
+    /* style.css */
+
+/* Styles généraux */
+body {
+    
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Couleur de fond gris clair */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px; /* Largeur du conteneur */
+    margin: 50px auto; /* Centrage vertical */
+    padding: 20px;
+    background-color: #fff; /* Fond blanc */
+    border-radius: 5px; /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+h2 {
+    text-align: center; /* Centrage du texte */
+    color: #007bff; /* Couleur de texte bleu */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Espacement entre les éléments */
+}
+
+.form-control {
+    width: 100%; /* Largeur maximale */
+    padding: 10px; /* Espacement interne */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 4px; /* Coins arrondis */
+    box-sizing: border-box; /* Taille de boîte incluse */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Fond bleu */
+    color: #fff; /* Texte blanc */
+    border: none; /* Pas de bordure */
+    padding: 10px 20px; /* Espacement du bouton */
+    cursor: pointer; /* Curseur de souris */
+    border-radius: 4px; /* Coins arrondis */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Fond bleu foncé au survol */
+}
+
+label {
+    font-weight: bold; /* Texte en gras */
+    color: #007bff; /* Couleur de texte bleu */
+}
+body {
+            background-color: rgba(0, 149, 255, 0.511);
+        }
+
+/* Autres styles spécifiques selon vos besoins */
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Connexion</h2>
+    <form method="post">
+        <div class="form-group">
+            <label for="nom_utilisateur">Nom d'utilisateur:</label>
+            <input type="text" class="form-control" id="nom_utilisateur" name="nom_utilisateur" required>
+        </div>
+        <div class="form-group">
+            <label for="mot_de_passe">Mot de passe:</label>
+            <input type="password" class="form-control" id="mot_de_passe" name="mot_de_passe" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Connexion</button>
+       <a href="{{ url_for('register') }}">Inscrivez-vous</a>
+    </form>
+</div>
+</body>
+</html>
